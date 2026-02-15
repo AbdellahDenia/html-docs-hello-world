@@ -27,13 +27,13 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o "agadirmyapp-cedgbvahg4cmdqdd.canadacentral-01.azurewebsites.net/myapp"
+        run: dotnet publish -c Release -o "https://waws-prod-yt1-029.api.azurewebsites.windows.net:454/subscriptions/b461ccf3-679f-44f1-a417-a99dc2b1db40/webspaces/rg-mywebapp-CanadaCentralwebspace/sites/agadirMyApp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: agadirmyapp-cedgbvahg4cmdqdd.canadacentral-01.azurewebsites.net/myapp
+          path: https://waws-prod-yt1-029.api.azurewebsites.windows.net:454/subscriptions/b461ccf3-679f-44f1-a417-a99dc2b1db40/webspaces/rg-mywebapp-CanadaCentralwebspace/sites/agadirMyApp
 
   deploy:
     runs-on: windows-latest
@@ -64,3 +64,4 @@ jobs:
           package: .
 
           
+
